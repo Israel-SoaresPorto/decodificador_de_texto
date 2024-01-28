@@ -65,10 +65,12 @@ body {
     display: flex;
     font-size: 0.8rem;
     align-items: center;
+    transition: ease 0.3s;
 }
 
 .entry__info-img {
     width: 14px;
+    transition: ease 0.3s;
 }
 
 .entry__info-clear #btn-clear {
@@ -191,4 +193,8 @@ body {
 
 .hide {
     display: none;
+}
+
+.error {
+    color: red;
 }

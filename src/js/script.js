@@ -4,6 +4,8 @@ const btnEncrypt = document.getElementById("btn-encrypt");
 const btnDecrypt = document.getElementById("btn-decrypt");
 const btnClear = document.getElementById("btn-clear");
 const btnCopy = document.getElementById("btn-copy");
+const entryInfo = document.querySelector(".entry__info");
+const entryInfoImage = document.querySelector(".entry__info-img");
 
 btnEncrypt.addEventListener("click", () => {
   let text = entryText.value;
@@ -13,6 +15,7 @@ btnEncrypt.addEventListener("click", () => {
   }
   outputText.innerText = " ";
   outputText.innerHTML = encryptText(text);
+  clearError();
   btnCopy.classList.remove("hide");
 });
 
@@ -24,6 +27,7 @@ btnDecrypt.addEventListener("click", () => {
   }
   outputText.innerText = " ";
   outputText.innerHTML = decryptText(text);
+  clearError();
   btnCopy.classList.remove("hide");
 });
 
@@ -99,8 +103,13 @@ function validateText(text) {
 }
 
 function showError() {
-  const entryInfo = document.querySelector(".entry__info");
-  const entryInfoImage = document.querySelector(".entry__info-img");
-  entryInfo.style.color = 'red';  
+  entryInfo.classList.add('error');  
   entryInfoImage.src = "src/assets/exclamation-red.png";
 }
+
+function clearError() {
+  entryInfo.classList.remove('error');  
+  entryInfoImage.src = "src/assets/info.png";
+}
+
+
