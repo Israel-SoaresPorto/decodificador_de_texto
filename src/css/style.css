@@ -27,7 +27,7 @@ body {
 .entry {
     width: 50%;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
 }
 
 .entry #entry__text {
@@ -116,8 +116,11 @@ body {
     width: 40%;
     height: 100%;
     background-color: white;
-    border-radius: 40px;
+    border-radius: 20px;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .output #output__text {
@@ -126,6 +129,7 @@ body {
     color: rgb(153, 143, 143);
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 20px;
     overflow-y: auto;
 }
@@ -146,14 +150,14 @@ body {
     font-size: 0.8rem;
 }
 
-.entry_copy {
-    padding: 30px;
+.output__copy {
+    padding-top: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.entry_copy #btn-copy {
+.output__copy #btn-copy {
     font-family: 'Inter', sans-serif;
     background-color: white;
     color: rgb(22, 22, 141);
