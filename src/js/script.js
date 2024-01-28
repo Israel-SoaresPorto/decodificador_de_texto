@@ -7,16 +7,24 @@ const btnCopy = document.getElementById("btn-copy");
 
 btnEncrypt.addEventListener("click", () => {
   let text = entryText.value;
+  if(validateText(text)) {
+    showError();
+    return;
+  }
   outputText.innerText = " ";
   outputText.innerHTML = encryptText(text);
-  btnCopy.classList.remove('hide');
+  btnCopy.classList.remove("hide");
 });
 
 btnDecrypt.addEventListener("click", () => {
   let text = entryText.value;
+  if(validateText(text)) {
+    showError();
+    return;
+  }
   outputText.innerText = " ";
   outputText.innerHTML = decryptText(text);
-  btnCopy.classList.remove('hide');
+  btnCopy.classList.remove("hide");
 });
 
 btnCopy.addEventListener("click", () => {
@@ -80,4 +88,20 @@ function decryptText(texto) {
 
 async function copyToClipboard(text) {
   await navigator.clipboard.writeText(text);
+}
+
+function validateText(text) {
+  const regex = /[A-Z|àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕç]/;
+  console.log(regex.test(text))
+  if(regex.test(text)) {
+    return true;
+  }
+  return false;
+}
+
+function showError() {
+  const entryInfo = document.querySelector(".entry__info");
+  const entryInfoImage = document.querySelector(".entry__info-img");
+  entryInfo.style.color = 'red';  
+  entryInfoImage.src = "src/assets/exclamation-red.png";
 }
