@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/media_queries.css" />
+    <title>Criptogrador/Decodifiocador de texto</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="entry">
+        <textarea name="entry-text" id="entry__text" cols="30" rows="10">
+Digite seu texto.</textarea
+        >
+        <div class="entry__info-clear">
+          <span class="entry__info"
+            ><img src="src/assets/info.png" />apenas letras minúsculas e sem
+            acento</span
+          >
+          <button id="btn-clear">Limpar</button>
+        </div>
+        <div class="entry__actions">
+          <button id="btn-encrypt">Criptografar</button>
+          <button id="btn-decrypt">Descriptografar</button>
+        </div>
+      </div>
+
+      <div class="output">
+        <div id="output__text">
+          <img
+            src="src/assets/High quality products 1 1.svg"
+            alt=""
+            class="output__sample-img"
+          />
+          <p class="output__sample-text__title">Nenhuma mensagen encontrada</p>
+          <p class="output__sample-text">
+            Digite um texto que você deseja criptografar ou descriptografar.
+          </p>
+        </div>
+        <div class="entry_copy">
+          <button id="btn-copy" disabled>Copiar</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer-container">
+      <p class="footer__text">Projeto feito por Israel Soares</p>
+      <a
+        href="https://github.com/Israel-SoaresPorto"
+        class="footer__link"
+        target="_blank"
+        ><img src="src/assets/github.png" alt="logo do github" />GitHub</a
+      >
+      <a
+        href="https://www.linkedin.com/in/israel-soares-porto-b24bb8241/"
+        target="_blank"
+        class="footer__link"
+        ><img src="src/assets/linkedin.png" alt="logo do linkedin" />Linkedin</a
+      >
+    </footer>
+
+    <script type="text/javascript" src="src/js/script.js" defer></script>
+  </body>
+</html>
