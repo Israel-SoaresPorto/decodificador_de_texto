@@ -92,7 +92,6 @@ async function copyToClipboard(text) {
 
 function validateText(text) {
   const regex = /[A-Z|àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕç]/;
-  console.log(regex.test(text))
   if(regex.test(text)) {
     return true;
   }
