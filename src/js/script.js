@@ -2,7 +2,7 @@ const entryText = document.getElementById("entry__text");
 const outputText = document.getElementById("output__text");
 const btnEncrypt = document.getElementById("btn-encrypt");
 const btnDecrypt = document.getElementById("btn-decrypt");
-const btnLimpar = document.getElementById("btn-clear");
+const btnClear = document.getElementById("btn-clear");
 const btnCopy = document.getElementById("btn-copy");
 
 btnEncrypt.addEventListener("click", () => {
@@ -23,7 +23,7 @@ btnCopy.addEventListener("click", () => {
   copyToClipboard(outputText.innerHTML);
 });
 
-btnLimpar.addEventListener("click", () => {
+btnClear.addEventListener("click", () => {
   entryText.value = "";
 });
 
