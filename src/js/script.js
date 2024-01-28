@@ -2,21 +2,21 @@ const entryText = document.getElementById("entry__text");
 const outputText = document.getElementById("output__text");
 const btnEncrypt = document.getElementById("btn-encrypt");
 const btnDecrypt = document.getElementById("btn-decrypt");
-const btnCopy = document.getElementById("btn-copy");
 const btnLimpar = document.getElementById("btn-clear");
+const btnCopy = document.getElementById("btn-copy");
 
 btnEncrypt.addEventListener("click", () => {
   let text = entryText.value;
   outputText.innerText = " ";
   outputText.innerHTML = encryptText(text);
-  btnCopy.disabled = false;
+  btnCopy.classList.remove('hide');
 });
 
 btnDecrypt.addEventListener("click", () => {
   let text = entryText.value;
   outputText.innerText = " ";
   outputText.innerHTML = decryptText(text);
-  btnCopy.disabled = false;
+  btnCopy.classList.remove('hide');
 });
 
 btnCopy.addEventListener("click", () => {
