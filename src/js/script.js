@@ -9,17 +9,16 @@ const entryInfoImage = document.querySelector(".entry__info-img");
 
 btnOk.addEventListener("click", () => {
   let text = entryText.value;
-  if(validateText(text)) {
+  if (validateText(text)) {
     showError();
     return;
   }
   outputText.innerText = " ";
-  if(!btnSwitch.checked) {
+  if (!btnSwitch.checked) {
     outputText.innerHTML = encryptText(text);
   } else {
     outputText.innerHTML = decryptText(text);
   }
-  clearError();
   btnCopy.classList.remove("hide");
 });
 
@@ -88,20 +87,18 @@ async function copyToClipboard(text) {
 
 function validateText(text) {
   const regex = /[A-Z|àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕç]/;
-  if(regex.test(text)) {
+  if (regex.test(text)) {
     return true;
   }
   return false;
 }
 
 function showError() {
-  entryInfo.classList.add('error');  
+  entryInfo.classList.add("error");
   entryInfoImage.src = "src/assets/exclamation-red.png";
+
+  setInterval(() => {
+    entryInfo.classList.remove("error");
+    entryInfoImage.src = "src/assets/info.png";
+  }, 2000);
 }
-
-function clearError() {
-  entryInfo.classList.remove('error');  
-  entryInfoImage.src = "src/assets/info.png";
-}
-
-

@@ -45,27 +45,23 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.entry__info-clear {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.entry__info-section {
     padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .entry__info {
-    padding: 10px;
+    padding: 12px;
     font-weight: 600;
-    color: #495057;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.entry__info {
-    display: flex;
     font-size: 0.8rem;
+    color: #495057;
+    border-radius: 20px;
+    display: flex;
     align-items: center;
     transition: all ease 0.3s;
+    gap: 10px;
 }
 
 .entry__info-img {
