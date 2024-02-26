@@ -65,23 +65,12 @@ body {
     display: flex;
     font-size: 0.8rem;
     align-items: center;
-    transition: ease 0.3s;
+    transition: all ease 0.3s;
 }
 
 .entry__info-img {
     width: 14px;
-    transition: ease 0.3s;
-}
-
-.entry__info-clear #btn-clear {
-    font-family: 'Inter', sans-serif;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: white;
-    color: rgb(22, 22, 141);
-    border: 1px solid rgb(22, 22, 141);
-    outline: none;
-    cursor: pointer;
+    transition: all ease 0.3s;
 }
 
 .entry__actions {
@@ -100,14 +89,60 @@ body {
     cursor: pointer;
 }
 
-.entry__actions #btn-encrypt {
+.entry__actions__switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .8rem;
+}
+
+.entry__actions__switch span{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    outline: 1px solid rgb(153, 143, 143);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.entry__actions__switch span::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(22, 22, 141);
+    transition: transform 0.5s ease;
+    transform: translateX(0);
+    position: relative;
+    z-index: 1;
+}
+
+.entry__actions__switch input:checked + span::after {
+    transform: translateX(100%);
+}
+
+.entry__actions__switch input {
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    outline: none;
+    bottom: 0;
+}
+
+.entry__actions #btn-ok {
     background-color: rgb(22, 22, 141);
     color: white;
     border: 1px solid black;
     transition: ease .5s;
 }
 
-.entry__actions #btn-decrypt {
+.entry__actions #btn-clear {
     background-color: rgb(255, 255, 255);
     color: rgb(22, 22, 141);
     border: 1px solid rgb(22, 22, 141);
@@ -196,5 +231,6 @@ body {
 }
 
 .error {
+    background-color: rgb(245, 130, 130);
     color: red;
 }
