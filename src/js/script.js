@@ -1,32 +1,24 @@
 const entryText = document.getElementById("entry__text");
 const outputText = document.getElementById("output__text");
-const btnEncrypt = document.getElementById("btn-encrypt");
-const btnDecrypt = document.getElementById("btn-decrypt");
+const btnSwitch = document.getElementById("switch");
+const btnOk = document.getElementById("btn-ok");
 const btnClear = document.getElementById("btn-clear");
 const btnCopy = document.getElementById("btn-copy");
 const entryInfo = document.querySelector(".entry__info");
 const entryInfoImage = document.querySelector(".entry__info-img");
 
-btnEncrypt.addEventListener("click", () => {
+btnOk.addEventListener("click", () => {
   let text = entryText.value;
   if(validateText(text)) {
     showError();
     return;
   }
   outputText.innerText = " ";
-  outputText.innerHTML = encryptText(text);
-  clearError();
-  btnCopy.classList.remove("hide");
-});
-
-btnDecrypt.addEventListener("click", () => {
-  let text = entryText.value;
-  if(validateText(text)) {
-    showError();
-    return;
+  if(!btnSwitch.checked) {
+    outputText.innerHTML = encryptText(text);
+  } else {
+    outputText.innerHTML = decryptText(text);
   }
-  outputText.innerText = " ";
-  outputText.innerHTML = decryptText(text);
   clearError();
   btnCopy.classList.remove("hide");
 });
