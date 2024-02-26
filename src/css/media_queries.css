@@ -15,6 +15,10 @@
         align-content: space-around;
     }
 
+    .entry__actions {
+        flex-wrap: wrap;
+    }
+
     .output {
         width: 90%;
         height: 40%;
@@ -55,8 +59,13 @@
         width: 14px;
     }
 
-    .entry__info-clear #btn-clear {
-        padding: 8px 8px;
+    .entry__actions__switch {
+        font-size: 0.6rem;
+    }
+
+    .entry__actions__switch span {
+        width: 68px;
+        height: 34px;
     }
 
     .entry__actions button {

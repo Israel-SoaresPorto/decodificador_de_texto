@@ -106,8 +106,8 @@ body {
 .entry__actions__switch span::after {
     content: "";
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 50%;
+    height: 100%;
     border-radius: 50%;
     background-color: rgb(22, 22, 141);
     transition: transform 0.5s ease;
