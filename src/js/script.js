@@ -38,25 +38,26 @@ function encryptText(text) {
   for (let word of separateText) {
     let letters = [...word];
 
-    for (let i in letters) {
-      if (letters[i] == "a") {
-        letters[i] = "ai";
+    let newLetters = letters.map(letter => {
+      if (letter == "a") {
+        letter = "ai";
       }
-      if (letters[i] == "e") {
-        letters[i] = "enter";
+      if (letter == "e") {
+        letter = "enter";
       }
-      if (letters[i] == "i") {
-        letters[i] = "imes";
+      if (letter == "i") {
+        letter = "imes";
       }
-      if (letters[i] == "o") {
-        letters[i] = "ober";
+      if (letter == "o") {
+        letter = "ober";
       }
-      if (letters[i] == "u") {
-        letters[i] = "ufat";
+      if (letter == "u") {
+        letter = "ufat";
       }
-    }
+      return letter;
+    });
 
-    word = letters.join("");
+    word = newLetters.join("");
 
     newText += word + " ";
   }
@@ -68,7 +69,7 @@ function decryptText(texto) {
 
   let separateText = texto.split(" ");
 
-  for (let word of separateText) {
+  separateText.map(word => {
     let newWord = word.replace(/ai/g, "a");
     newWord = newWord.replace(/enter/g, "e");
     newWord = newWord.replace(/imes/g, "i");
@@ -76,7 +77,7 @@ function decryptText(texto) {
     newWord = newWord.replace(/ufat/g, "u");
 
     newText += newWord + " ";
-  }
+  });
 
   return newText.trim();
 }
@@ -97,8 +98,11 @@ function showError() {
   entryInfo.classList.add("error");
   entryInfoImage.src = "src/assets/exclamation-red.png";
 
-  setInterval(() => {
+  let error = setInterval(() => {
     entryInfo.classList.remove("error");
     entryInfoImage.src = "src/assets/info.png";
+
+    clearInterval(error);
   }, 2000);
+  
 }
